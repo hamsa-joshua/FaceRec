@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signup Page</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        position: relative;
+    }
+    
+    .signup-box {
+        width: 300px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        border: 2px solid transparent;
+        transition: border-color 0.3s ease;
+    }
+
+    .signup-box:hover {
+        border-color: #6cb2eb;
+    }
+
+    .signup-box input[type="text"],
+    .signup-box input[type="password"],
+    .signup-box input[type="submit"] {
+        width: calc(100% - 20px);
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    .signup-box input[type="submit"] {
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .signup-box input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+    .admin-login {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 16px;
+        text-decoration: none;
+        color: #007bff;
+    }
+
+    .admin-login:hover {
+        color: #0056b3;
+    }
+</style>
+</head>
+<body>
+    <a class="admin-login" href="/adminlogin">Admin Login</a>
+    <div class="signup-box">
+        <h2>Sign Up</h2>
+        <form id="signupForm" action="/add" method="POST">
+            <input type="text" name="name" placeholder="Name" required><br>
+            <input type="text" name="id" placeholder="Student ID" required><br>
+            <input type="password" name="password" placeholder="Password" required><br>
+            <input type="submit" value="Sign Up">
+        </form>
+        <p style="text-align: center;">(or)</p>
+        <form action="/take_attendance" method="GET">
+            <input type="submit" value="Take Attendance">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .login-box {
+        width: 300px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        border: 2px solid transparent;
+        transition: border-color 0.3s ease;
+    }
+
+    .login-box:hover {
+        border-color: #6cb2eb;
+    }
+
+    .login-box input[type="text"],
+    .login-box input[type="password"],
+    .login-box input[type="submit"],
+    .login-box button,
+    .login-box select {
+        width: calc(100% - 20px);
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        cursor: pointer;
+        font-size: 16px;
+        height: 40px; /* Adjust height as needed */
+    }
+
+    .login-box input[type="submit"] {
+        background-color: #007bff;
+        color: white;
+        transition: background-color 0.3s ease;
+    }
+
+    .login-box input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+    .login-box button {
+        background-color: #28a745;
+        color: white;
+        transition: background-color 0.3s ease;
+    }
+
+    .login-box button:hover {
+        background-color: #218838;
+    }
+    .admin-login {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 16px;
+        text-decoration: none;
+        color: #007bff;
+    }
+</style>
+</head>
+<body>
+    <a class="admin-login" href="/">Home</a>
+    <div class="login-box">
+        <h2>Admin Login</h2>
+        <form action="/action" method="POST">
+            <input type="text" name="teacher_id" placeholder="Teacher ID" required><br>
+            <input type="password" name="password" placeholder="Password" required><br>
+            <select name="action" required>
+                <option value="" disabled selected>Select an action</option>
+                <option value="view_attendance">View Attendance</option>
+                <option value="list_users">Students List</option>
+            </select><br>
+            <input type="submit" value="Submit">
+        </form>        
+        {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

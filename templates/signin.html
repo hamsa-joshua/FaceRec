@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Take Attendance</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .attendance-box {
+        width: 300px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        border: 2px solid transparent;
+        transition: border-color 0.3s ease;
+    }
+
+    .attendance-box:hover {
+        border-color: #6cb2eb;
+    }
+
+    .attendance-box input[type="text"],
+    .attendance-box input[type="password"],
+    .attendance-box input[type="submit"] {
+        width: calc(100% - 20px);
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    .attendance-box input[type="submit"] {
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .attendance-box input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+    <div class="attendance-box">
+        <h2>Take Attendance</h2>
+        <form action="/take_attendance" method="POST">
+            <input type="text" name="name" placeholder="Name" required><br>
+            <input type="text" name="student_id" placeholder="Student ID" required><br>
+            <input type="submit" value="Take Attendance">
+        </form>
+        {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
