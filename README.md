@@ -24,7 +24,7 @@ This project is a face recognition-based attendance system built using Python, F
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/xkoei/FaceRec.git
+    git clone https://github.com/hamsa-joshua/FaceRec.git
     cd FaceRec
     ```
 
